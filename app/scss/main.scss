@@ -725,7 +725,23 @@ header{
 .footer{
     background: url(../img/footer-bg-desktop.png) no-repeat center bottom;
     background-size: cover;
-
+    &__about{
+        margin-top: vw(62);
+        display: flex;
+        align-items: flex-start;
+        &-logo{
+            height: vw(70);
+            width: vw(120);
+            flex-shrink: 0;
+            margin-right: vw(31);
+        }
+        &-text{
+            font-size: vw(12);
+            line-height: vw(16);
+            color: #AA7E9D;
+            font-family: $Kiev;
+        }
+    }
     &--second{
         background: url(../img/footer-second.png) no-repeat center bottom;
         background-size: cover;
@@ -1324,18 +1340,28 @@ header{
             margin-left: 0;
         }
     }
-    &__text{
+    &__text-title{
         font-size: vw(60);
         line-height: vw(48);
         color: #860064;
         font-family: $EB;
         margin-top: vw(123);
+        margin-bottom: vw(48);
+        font-weight: 400;
 
         @include for-md(){
             font-size: vw2(28);
             line-height: vw2(24);
             margin-top: vw2(29);
         }
+    }
+    &__text{
+        font-weight: 300;
+        font-size: vw(27);
+        line-height: vw(34);
+        font-family: $MyRiad;
+        color: #6A489C;
+
     }
     &__image{
         position: absolute;
