@@ -2504,6 +2504,7 @@ header{
             margin-left: 0;
         }
         &--mobile{
+            display: none;
             @include for-md{
                 display: block;
                 margin: 0 auto;
@@ -2672,6 +2673,9 @@ header{
            display: none;
         }
     }
+    &--food{
+        padding-top: vw(40);
+    }
     &__row{
         display: flex;
         @include for-md{
@@ -2724,6 +2728,268 @@ header{
     @include for-tiny-tablet{
         font-size: 8px;
         line-height: 12px;
+    }
+}
+.hero-food{
+    padding-top: vw(160);
+    &__row{
+        position: relative;
+        
+    }
+    &__left{
+        width: 43%;
+        padding-left: vw(210);
+        @include for-md{
+            padding: 0 30px;
+            width: auto;
+        }
+        @include for-tiny-tablet{
+            padding: 0 15px;
+        }
+        
+    }
+    &__subtitle{
+        margin-top: vw(20);
+        font-size: vw(82);
+        line-height: vw(65);
+        color: $purple2;
+        font-family: $EB;
+        @include for-md{
+            margin-top: 10px;
+            font-size: 48px;
+            line-height: 52px;
+        }
+        @include for-tiny-tablet{
+            font-size: 34px;
+            line-height: 38px;
+        }
+        @include for-tiny-mob{
+            font-size: 28px;
+            line-height: 32px;
+        }
+        sup{
+            font-size: vw(59);
+        }
+    }
+    &__text{
+        margin-top: vw(50);
+        font-weight: 300;
+        @include for-md{
+            margin-top: 30px;
+        }
+        @include for-sm{
+            font-size: 24px;
+            line-height: 28px;
+        }
+        @include for-tiny-tablet{
+            font-size: 20px;
+            line-height: 24px;
+            margin-top: 20px;
+        }
+    }
+    &__text + &__text{
+        margin-top: vw(75);
+        @include for-md{
+            margin-top: 40px;
+        }
+        @include for-tiny-tablet{
+            margin-top: 20px;
+        }
+    }
+    &__img{
+        position: absolute;
+        height: vw(1009);
+        max-width: 100%;
+        top: vw(-210);
+        right: 0;
+        @include for-md{
+            display: none;
+            position: relative;
+            margin-left: 0;
+        }
+        &--mobile{
+            @include for-md{
+                position: relative;
+                top: 0;
+                display: block;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+.food-questions{
+    position: relative;
+    padding-top: vw(312);
+    @include for-md{
+        padding: 70px 30px 0;
+    } 
+    @include for-tiny-tablet{
+        padding: 40px 15px 0;
+    }
+    .container{
+        @include for-md{
+            padding: 0;
+        }
+    }
+    &:before{
+        content: "";
+        position: absolute;
+        width: vw(1377);
+        height: vw(778);
+        background-image: url(../img/health-questions.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        bottom: vw(-107);
+        @include for-md{
+           left: 0;
+        }
+    }
+    &__item{
+        box-sizing: border-box;
+        width: 40%;
+        &--w60{
+            width: 59%;
+            padding-right: vw(40);
+            @include for-md{
+                width: 100%;
+                padding-right: 0;
+            } 
+        }
+        @include for-md{
+            width: 100%;
+        } 
+    }
+    &__item + &__item{
+        @include for-md{
+            margin-top: 50px;
+        }
+        @include for-tiny-tablet{
+            margin-top: 30px;
+        }
+    }
+    &__row{
+        display: flex;
+        padding-left: vw(100);      
+        @include for-md{
+            flex-direction: column;
+            padding: 0;
+        }  
+    }
+    &__list{
+        padding: 0;
+        margin: 0;
+        padding-top: vw(25);
+        margin-bottom: vw(48);
+        width: 80%;
+        list-style: none;
+        @include for-md{
+            padding-top: 20px;
+            margin: 30px 0;
+            width: 100%;
+        }
+        @include for-tiny-tablet{
+            padding-top: 0;
+            margin: 10px 0;
+        }
+        &--pl{
+            padding-left: vw(50);
+            @include for-md{
+               padding-left: 0;
+            }
+        }
+        &-w100{
+            width: 100%;
+        }
+    }
+    &__list-item{
+        position: relative;
+        display: inline-block;
+        font-weight: 300;
+        line-height: vw(48);
+        i{
+            font-family: $EB;
+            font-size: vw(46);
+            @include for-md{
+                font-size: 42px;
+            }
+            @include for-tiny-tablet{
+                font-size: 32px;
+            }
+            @include for-tiny-mob{
+                font-size: 20px;
+                
+            }
+        }
+        &::before{
+            content: "•";
+            padding-right: vw(10);
+        }
+        @include for-md{
+            font-size: 28px;
+            line-height: 38px;
+        }
+        @include for-tiny-tablet{
+            font-size: 18px;
+            line-height: 22px;
+        }
+        @include for-tiny-mob{
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+    &__list-item + &__list-item{
+        margin-top: vw(25);
+        @include for-md{
+            margin-top: 10px;
+        }
+        
+    }
+    &__title{
+        font-size: vw(144);
+        line-height: vw(114);
+        color: $purple2;
+        font-family: $EB;
+        &--pink{
+            color: $pink;
+        }
+        @include for-md{
+            margin-bottom: 20px;
+            font-size: 80px;
+            line-height: 84px;
+            br{
+                display: none;
+            }
+        } 
+        @include for-tiny-tablet{
+            margin-bottom: 10px;
+            font-size: 54px;
+            line-height: 58px;
+        }
+        @include for-tiny-mob{
+            font-size: 42px;
+            line-height: 46px;
+        }
+    }
+    &__text-container{
+        margin-top: vw(50);
+    }
+    &__text{
+        line-height: 48px;
+        font-weight: 300;
+        @include for-md{
+            font-size: 24px;
+            line-height: 32px;
+        }
+        @include for-tiny-tablet{
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }
+    &__text + &__text{
+        margin-top: vw(50);
+    }
+    &__explanation-text{
+        margin-top: vw(56);
     }
 }
 
