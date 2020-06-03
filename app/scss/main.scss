@@ -912,6 +912,31 @@ header{
             line-height: vw2(21);
         }
     }
+    &__contraindications{
+        margin-top: vw(-15);
+        font-size: vw(46);
+        line-height: vw(48);
+        color: $light-purple;
+        text-align: center;
+        font-family: $EB;
+        @include for-md{
+           margin-top: 0;
+           font-size: 24px;
+           line-height: 28px;
+        }
+        @include for-tiny-tablet{
+            font-size: 18px;
+            line-height: 22px;
+        }
+        @include for-tiny-mob{
+            font-size: 12px;
+            line-height: 16px;
+        }
+        @include for-lit-mob{
+            font-size: 8px;
+            line-height: 12px;
+        }
+    }
 }
 .promo-hero{
     padding: vw(215) 0;
@@ -2403,6 +2428,308 @@ header{
         }
     }
 }
+.hero-health{
+    padding-top: vw(90);
+    &__row{
+        position: relative;
+        
+    }
+    &__left{
+        width: 43%;
+        padding-left: vw(170);
+        @include for-md{
+            padding: 0 30px;
+            width: auto;
+        }
+        @include for-tiny-tablet{
+            padding: 0 15px;
+        }
+        
+    }
+    &__subtitle{
+        margin-top: vw(20);
+        font-size: vw(82);
+        line-height: vw(65);
+        color: $purple2;
+        font-family: $EB;
+        @include for-md{
+            margin-top: 10px;
+            font-size: 48px;
+            line-height: 52px;
+        }
+        @include for-tiny-tablet{
+            font-size: 34px;
+            line-height: 38px;
+        }
+        @include for-tiny-mob{
+            font-size: 28px;
+            line-height: 32px;
+        }
+    }
+    &__text{
+        margin-top: vw(50);
+        font-weight: 300;
+        @include for-md{
+            margin-top: 30px;
+        }
+        @include for-sm{
+            font-size: 24px;
+            line-height: 28px;
+        }
+        @include for-tiny-tablet{
+            font-size: 20px;
+            line-height: 24px;
+            margin-top: 20px;
+        }
+    }
+    &__text + &__text{
+        margin-top: vw(75);
+        @include for-md{
+            margin-top: 40px;
+        }
+        @include for-tiny-tablet{
+            margin-top: 20px;
+        }
+    }
+    &__img{
+        position: absolute;
+        width: vw(1067);
+        height: vw(1009);
+        max-width: 100%;
+        top: vw(-27);
+        right: 0;
+        @include for-md{
+            display: none;
+            position: relative;
+            margin-left: 0;
+        }
+        &--mobile{
+            @include for-md{
+                display: block;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+.health-questions{
+    position: relative;
+    padding-top: vw(212);
+    @include for-md{
+        padding: 70px 30px 0;
+    } 
+    @include for-tiny-tablet{
+        padding: 40px 15px 0;
+    }
+    .container{
+        @include for-md{
+            padding: 0;
+        }
+    }
+    &:before{
+        content: "";
+        position: absolute;
+        width: vw(1377);
+        height: vw(778);
+        background-image: url(../img/health-questions.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        bottom: vw(-107);
+        @include for-md{
+           left: 0;
+        }
+    }
+    &__item{
+        box-sizing: border-box;
+        width: 40%;
+        &--w60{
+            width: 59%;
+            padding-right: vw(40);
+            @include for-md{
+                width: 100%;
+                padding-right: 0;
+            } 
+        }
+        @include for-md{
+            width: 100%;
+        } 
+    }
+    &__item + &__item{
+        @include for-md{
+            margin-top: 90px;
+        }
+        @include for-tiny-tablet{
+            margin-top: 30px;
+        }
+    }
+    &__row{
+        display: flex;
+        padding-left: vw(100);      
+        @include for-md{
+            flex-direction: column;
+            padding: 0;
+        }  
+    }
+    &__list{
+        padding: 0;
+        margin: 0;
+        margin-bottom: vw(48);
+        list-style: none;
+        @include for-md{
+            margin: 30px 0;
+        }
+        @include for-tiny-tablet{
+            margin: 20px 0;
+        }
+    }
+    &__list-item{
+        position: relative;
+        display: inline-block;
+        font-weight: 600;
+        color: $pink;
+        line-height: vw(38);
+        &::before{
+            content: "•";
+        }
+        @include for-md{
+            font-size: 28px;
+            line-height: 32px;
+        }
+        @include for-tiny-tablet{
+            font-size: 18px;
+            line-height: 22px;
+        }
+        @include for-tiny-mob{
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+    &__list-item + &__list-item{
+        margin-top: vw(5);
+        @include for-md{
+            margin-top: 10px;
+        }
+        
+    }
+    &__title{
+        font-size: vw(144);
+        line-height: vw(114);
+        color: $purple2;
+        font-family: $EB;
+        &--pink{
+            color: $pink;
+        }
+        @include for-md{
+            margin-bottom: 20px;
+        } 
+    }
+    &__text-container{
+        margin-top: vw(50);
+    }
+    &__text{
+        line-height: 48px;
+        font-weight: 300;
+        @include for-md{
+            font-size: 24px;
+            line-height: 32px;
+        }
+        @include for-tiny-tablet{
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }
+    &__text + &__text{
+        margin-top: vw(50);
+    }
+    &__explanation-text{
+        margin-top: vw(56);
+    }
+}
+.bottom-question{
+    position: relative;
+    padding-top: vw(185);
+    .container{
+        @include for-md{
+            padding: 0;
+        }
+    }
+    @include for-md{
+        padding: 100px 30px 0;
+    }
+    @include for-tiny-tablet{
+        padding: 50px 15px 0;
+    }
+    &::after{
+        content: "";
+        position: absolute;
+        width: vw(129);
+        height: vw(371);
+        background-image: url(../img/bottom-question.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        right: vw(88);
+        top: vw(153);
+        @include for-md{
+           display: none;
+        }
+    }
+    &__row{
+        display: flex;
+        @include for-md{
+           flex-direction: column;
+        }
+    }
+    &__guides-item-container{
+        padding-top: 0;
+        margin-top: vw(150);
+        margin-left: vw(-35);
+        width: 36%;
+        @include for-md{
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+    &__brand{
+        display: flex;
+        padding-top: 140px;
+        padding-left: vw(35);
+        @include for-md{
+            padding-top: 40px;
+            padding-left: 25px;
+        }
+    }
+    &__brand-img-container{
+        margin-right: vw(31);
+        width: vw(120);
+        height: vw(70);
+        @include for-md{
+            width: 40px;
+        }
+    }
+    &__promo-image{
+        @include for-md{
+            display: block;
+            margin: 0 auto;
+        }
+    }
+    
+}
+.explanation-text{
+    font-size: vw(12);
+    line-height: vw(16);
+    color: $light-purple;
+    @include for-md{
+        font-size: 12px;
+        line-height: 16px;
+    }
+    @include for-tiny-tablet{
+        font-size: 8px;
+        line-height: 12px;
+    }
+}
+
+
+
+
 @keyframes spin {
     0% {
       transform: translate3d(0, -50%, 0);
