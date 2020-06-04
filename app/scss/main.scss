@@ -2569,12 +2569,12 @@ header{
         width: vw(895);
         padding-left: vw(95);
         @include for-md{
-            padding: 0 30px;
+            padding: 0 vw3(30);
             width: auto;
         }
-        @include for-tiny-tablet{
-            padding: 0 15px;
-        }
+        // @include for-tiny-tablet{
+        //     padding: 0 15px;
+        // }
         
     }
     h2{
@@ -2591,43 +2591,45 @@ header{
         color: $purple2;
         font-family: $EB;
         @include for-md{
-            margin-top: 10px;
-            font-size: 48px;
-            line-height: 52px;
+            margin-top: vw3(10);
+            font-size: vw3(60);
+            line-height: vw3(52);
         }
-        @include for-tiny-tablet{
-            font-size: 34px;
-            line-height: 38px;
-        }
-        @include for-tiny-mob{
-            font-size: 28px;
-            line-height: 32px;
-        }
+        // @include for-tiny-tablet{
+        //     font-size: 34px;
+        //     line-height: 38px;
+        // }
+        // @include for-tiny-mob{
+        //     font-size: 28px;
+        //     line-height: 32px;
+        // }
     }
     &__text{
         margin-top: vw(50);
         font-weight: 300;
         @include for-md{
             margin-top: 30px;
+            font-size: vw3(27);
+            line-height: vw3(34);
         }
-        @include for-sm{
-            font-size: 24px;
-            line-height: 28px;
-        }
-        @include for-tiny-tablet{
-            font-size: 20px;
-            line-height: 24px;
-            margin-top: 20px;
-        }
+        // @include for-sm{
+        //     font-size: 24px;
+        //     line-height: 28px;
+        // }
+        // @include for-tiny-tablet{
+        //     font-size: 20px;
+        //     line-height: 24px;
+        //     margin-top: 20px;
+        // }
     }
     &__text + &__text{
         margin-top: vw(75);
         @include for-md{
-            margin-top: 40px;
+            margin-top: vw3(40);
         }
-        @include for-tiny-tablet{
-            margin-top: 20px;
-        }
+        // @include for-tiny-tablet{
+        //     margin-top: 20px;
+        // }
     }
     &__img{
         position: absolute;
@@ -2659,11 +2661,11 @@ header{
     position: relative;
     padding-top: vw(212);
     @include for-md{
-        padding: 70px 30px 0;
+        padding: vw3(70) vw3(30) 0;
     } 
-    @include for-tiny-tablet{
-        padding: 40px 15px 0;
-    }
+    // @include for-tiny-tablet{
+    //     padding: 40px 15px 0;
+    // }
     .container{
         overflow: visible;
         @include for-md{
@@ -2706,11 +2708,11 @@ header{
     }
     &__item + &__item{
         @include for-md{
-            margin-top: 90px;
+            margin-top: vw3(90);
         }
-        @include for-tiny-tablet{
-            margin-top: 30px;
-        }
+        // @include for-tiny-tablet{
+        //     margin-top: 30px;
+        // }
     }
     &__row{
         display: flex;
@@ -2728,11 +2730,11 @@ header{
         margin-bottom: vw(48);
         list-style: none;
         @include for-md{
-            margin: 30px 0;
+            margin: vw3(30) 0;
         }
-        @include for-tiny-tablet{
-            margin: 20px 0;
-        }
+        // @include for-tiny-tablet{
+        //     margin: 20px 0;
+        // }
     }
     &__list-item{
         position: relative;
@@ -2744,22 +2746,22 @@ header{
             content: "•";
         }
         @include for-md{
-            font-size: 28px;
-            line-height: 32px;
+            font-size: vw3(27);
+            line-height: vw3(48);
         }
-        @include for-tiny-tablet{
-            font-size: 18px;
-            line-height: 22px;
-        }
-        @include for-tiny-mob{
-            font-size: 16px;
-            line-height: 20px;
-        }
+        // @include for-tiny-tablet{
+        //     font-size: 18px;
+        //     line-height: 22px;
+        // }
+        // @include for-tiny-mob{
+        //     font-size: 16px;
+        //     line-height: 20px;
+        // }
     }
     &__list-item + &__list-item{
         margin-top: vw(5);
         @include for-md{
-            margin-top: 10px;
+            margin-top: vw3(10);
         }
         
     }
@@ -2835,7 +2837,9 @@ header{
             color: $pink;
         }
         @include for-md{
-            margin-bottom: 20px;
+            margin-bottom: vw3(20);
+            font-size: vw3(100);
+            line-height: vw3(92);
         } 
     }
     &__text-container{
@@ -2845,19 +2849,25 @@ header{
         line-height: 48px;
         font-weight: 300;
         @include for-md{
-            font-size: 24px;
-            line-height: 32px;
+            font-size: vw3(27);
+            line-height: vw3(48);
         }
-        @include for-tiny-tablet{
-            font-size: 18px;
-            line-height: 22px;
-        }
+        // @include for-tiny-tablet{
+        //     font-size: 18px;
+        //     line-height: 22px;
+        // }
     }
     &__text + &__text{
         margin-top: vw(50);
+        @include for-md{
+            margin-top: vw3(50);
+        }
     }
     &__explanation-text{
         margin-top: vw(56);
+        @include for-md{
+            margin-top: vw3(56);
+        }
     }
 }
 .bottom-question{
@@ -2869,11 +2879,11 @@ header{
         }
     }
     @include for-md{
-        padding: 100px 30px 0;
+        padding: vw3(100) vw3(30) 0;
     }
-    @include for-tiny-tablet{
-        padding: 50px 15px 0;
-    }
+    // @include for-tiny-tablet{
+    //     padding: 50px 15px 0;
+    // }
     &::after{
         content: "";
         position: absolute;
@@ -2890,6 +2900,9 @@ header{
     }
     &--food{
         padding-top: vw(40);
+        @include for-md{
+            padding-top: vw3(40);
+        }
     }
     &__row{
         display: flex;
@@ -2912,8 +2925,8 @@ header{
         padding-top: 140px;
         padding-left: vw(35);
         @include for-md{
-            padding-top: 40px;
-            padding-left: 25px;
+            padding-top: vw3(40);
+            padding-left: vw3(25);
         }
     }
     &__brand-img-container{
@@ -2921,7 +2934,8 @@ header{
         width: vw(120);
         height: vw(70);
         @include for-md{
-            width: 40px;
+            width: vw3(40);
+            height: auto;
         }
     }
     &__promo-image{
@@ -2937,13 +2951,13 @@ header{
     line-height: vw(16);
     color: $light-purple;
     @include for-md{
-        font-size: 12px;
-        line-height: 16px;
+        font-size: vw3(12);
+        line-height: vw3(16);
     }
-    @include for-tiny-tablet{
-        font-size: 8px;
-        line-height: 12px;
-    }
+    // @include for-tiny-tablet{
+    //     font-size: 8px;
+    //     line-height: 12px;
+    // }
 }
 .hero-food{
     padding-top: vw(160);
@@ -2955,12 +2969,12 @@ header{
         width: 43%;
         padding-left: vw(210);
         @include for-md{
-            padding: 0 30px;
+            padding: 0 vw3(30);
             width: auto;
         }
-        @include for-tiny-tablet{
-            padding: 0 15px;
-        }
+        // @include for-tiny-tablet{
+        //     padding: 0 vw3(15);
+        // }
         
     }
     &__subtitle{
@@ -2970,46 +2984,60 @@ header{
         color: $purple2;
         font-family: $EB;
         @include for-md{
-            margin-top: 10px;
-            font-size: 48px;
-            line-height: 52px;
-        }
-        @include for-tiny-tablet{
-            font-size: 34px;
-            line-height: 38px;
-        }
-        @include for-tiny-mob{
-            font-size: 28px;
-            line-height: 32px;
+            margin-top: vw3(31);
+            font-size: vw3(60);
+            line-height: vw3(52);
         }
         sup{
+            position: relative;
+            left: vw(-16);
+            top: vw(-25);
             font-size: vw(59);
+            line-height: 0;
+            @include for-md{
+                font-size: vw3(30);
+                left: vw3(-10);
+                top: vw3(-20);
+            }
         }
+        // @include for-tiny-tablet{
+        //     font-size: 34px;
+        //     line-height: 38px;
+        // }
+        // @include for-tiny-mob{
+        //     font-size: 28px;
+        //     line-height: 32px;
+        // }
+        // sup{
+        //     font-size: vw(59);
+        // }
     }
     &__text{
         margin-top: vw(50);
         font-weight: 300;
         @include for-md{
-            margin-top: 30px;
+            margin-top: vw3(30);
+            font-size: vw3(27);
+            line-height: vw3(34);
         }
-        @include for-sm{
-            font-size: 24px;
-            line-height: 28px;
-        }
-        @include for-tiny-tablet{
-            font-size: 20px;
-            line-height: 24px;
-            margin-top: 20px;
-        }
+        // @include for-sm{
+        //     font-size: 24px;
+        //     line-height: 28px;
+        // }
+        // @include for-tiny-tablet{
+        //     font-size: 20px;
+        //     line-height: 24px;
+        //     margin-top: 20px;
+        // }
     }
     &__text + &__text{
         margin-top: vw(75);
         @include for-md{
-            margin-top: 40px;
+            margin-top: vw3(40);
         }
-        @include for-tiny-tablet{
-            margin-top: 20px;
-        }
+        // @include for-tiny-tablet{
+        //     margin-top: 20px;
+        // }
     }
     &__img{
         position: absolute;
@@ -3037,11 +3065,11 @@ header{
     position: relative;
     padding-top: vw(312);
     @include for-md{
-        padding: 70px 30px 0;
+        padding: vw3(70) vw3(30) 0;
     } 
-    @include for-tiny-tablet{
-        padding: 40px 15px 0;
-    }
+    // @include for-tiny-tablet{
+    //     padding: 40px 15px 0;
+    // }
     .container{
         @include for-md{
             padding: 0;
@@ -3077,11 +3105,11 @@ header{
     }
     &__item + &__item{
         @include for-md{
-            margin-top: 50px;
+            margin-top: vw3(50);
         }
-        @include for-tiny-tablet{
-            margin-top: 30px;
-        }
+        // @include for-tiny-tablet{
+        //     margin-top: 30px;
+        // }
     }
     &__row{
         display: flex;
@@ -3099,14 +3127,14 @@ header{
         width: 80%;
         list-style: none;
         @include for-md{
-            padding-top: 20px;
-            margin: 30px 0;
+            padding-top: vw3(20);
+            margin: vw3(30) 0;
             width: 100%;
         }
-        @include for-tiny-tablet{
-            padding-top: 0;
-            margin: 10px 0;
-        }
+        // @include for-tiny-tablet{
+        //     padding-top: 0;
+        //     margin: 10px 0;
+        // }
         &--pl{
             padding-left: vw(50);
             @include for-md{
@@ -3126,37 +3154,37 @@ header{
             font-family: $EB;
             font-size: vw(46);
             @include for-md{
-                font-size: 42px;
+                font-size: vw3(42);
             }
-            @include for-tiny-tablet{
-                font-size: 32px;
-            }
-            @include for-tiny-mob{
-                font-size: 20px;
+            // @include for-tiny-tablet{
+            //     font-size: 32px;
+            // }
+            // @include for-tiny-mob{
+            //     font-size: 20px;
                 
-            }
+            // }
         }
         &::before{
             content: "•";
             padding-right: vw(10);
         }
         @include for-md{
-            font-size: 28px;
-            line-height: 38px;
+            font-size: vw3(27);
+            line-height: vw3(48);
         }
-        @include for-tiny-tablet{
-            font-size: 18px;
-            line-height: 22px;
-        }
-        @include for-tiny-mob{
-            font-size: 16px;
-            line-height: 20px;
-        }
+        // @include for-tiny-tablet{
+        //     font-size: 18px;
+        //     line-height: 22px;
+        // }
+        // @include for-tiny-mob{
+        //     font-size: 16px;
+        //     line-height: 20px;
+        // }
     }
     &__list-item + &__list-item{
         margin-top: vw(25);
         @include for-md{
-            margin-top: 10px;
+            margin-top: vw3(10);
         }
         
     }
@@ -3169,43 +3197,49 @@ header{
             color: $pink;
         }
         @include for-md{
-            margin-bottom: 20px;
-            font-size: 80px;
-            line-height: 84px;
+            margin-bottom: vw3(20);
+            font-size: vw3(87);
+            line-height: vw3(114);
             br{
                 display: none;
             }
         } 
-        @include for-tiny-tablet{
-            margin-bottom: 10px;
-            font-size: 54px;
-            line-height: 58px;
-        }
-        @include for-tiny-mob{
-            font-size: 42px;
-            line-height: 46px;
-        }
+        // @include for-tiny-tablet{
+        //     margin-bottom: 10px;
+        //     font-size: 54px;
+        //     line-height: 58px;
+        // }
+        // @include for-tiny-mob{
+        //     font-size: 42px;
+        //     line-height: 46px;
+        // }
     }
     &__text-container{
         margin-top: vw(50);
-    }
-    &__text{
-        line-height: 48px;
-        font-weight: 300;
         @include for-md{
-            font-size: 24px;
-            line-height: 32px;
-        }
-        @include for-tiny-tablet{
-            font-size: 18px;
-            line-height: 22px;
+            margin-top: vw3(50);
         }
     }
-    &__text + &__text{
-        margin-top: vw(50);
-    }
+    // &__text{
+    //     line-height: 48px;
+    //     font-weight: 300;
+    //     @include for-md{
+    //         font-size: 24px;
+    //         line-height: 32px;
+    //     }
+    //     // @include for-tiny-tablet{
+    //     //     font-size: 18px;
+    //     //     line-height: 22px;
+    //     // }
+    // }
+    // &__text + &__text{
+    //     margin-top: vw(50);
+    // }
     &__explanation-text{
         margin-top: vw(56);
+        @include for-md{
+            margin-top: vw3(56);
+        }
     }
 }
 .advices{
