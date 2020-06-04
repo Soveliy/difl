@@ -1826,6 +1826,16 @@ header{
             line-height: vw2(22.5);
         }
     }
+    &__text-explanation{
+        margin-top: vw(10);
+        font-size: vw(12);
+        line-height: vw(17);
+        color: $light-purple;
+        @include for-md{
+            font-size: vw3(15);
+            line-height: vw3(21);
+        }
+    }
 }
 
 .test-hero{
@@ -2603,7 +2613,7 @@ header{
         
     }
     &__left{
-        width: vw(895);
+        width: vw(800);
         padding-left: vw(95);
         @include for-md{
             padding: 0 vw3(30);
@@ -2719,7 +2729,9 @@ header{
         background-repeat: no-repeat;
         bottom: vw(-107);
         @include for-md{
-           left: 0;
+            width: vw3(1377);
+            height: vw3(778);
+            left: 0;
         }
     }
 
@@ -2929,7 +2941,7 @@ header{
         margin-top: vw(50);
     }
     &__text{
-        line-height: 48px;
+        line-height: vw(48);
         font-weight: 300;
         @include for-md{
             font-size: vw3(27);
@@ -3508,6 +3520,13 @@ header{
             }
         }
         
+    }
+    &__link{
+        color: $pink;
+        text-decoration: underline;
+        &:hover{
+            text-decoration: none;
+        }
     }
 }
 
