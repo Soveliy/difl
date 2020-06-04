@@ -2582,7 +2582,7 @@ header{
     }
     &__img{
         position: absolute;
-        width: vw(1067);
+        width: vw(1000);
         height: vw(1009);
         max-width: 100%;
         top: vw(-27);
@@ -2897,6 +2897,7 @@ header{
             margin-left: 0;
         }
         &--mobile{
+            display: none;
             @include for-md{
                 position: relative;
                 top: 0;
