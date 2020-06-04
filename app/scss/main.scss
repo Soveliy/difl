@@ -2879,8 +2879,10 @@ header{
                 position: relative;
                 top: vw(-20);
 
+               @include for-md(){
                 font-size: vw3(30);
                 top: vw3(-10);
+               }
             }
         }
         ul{
