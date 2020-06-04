@@ -776,6 +776,43 @@ header{
         padding-bottom: vw(30);
     }
 
+
+    &--third{
+        position: relative;
+        background: url(../images/footer-third-bg.jpg) no-repeat center bottom;
+        background-size: cover;
+        padding-top: vw(900);
+        margin-top: vw(-754);
+        @include for-md(){
+            background: url(../images/third-mobile-bg.jpg) no-repeat center bottom;
+            background-size: cover;
+
+            .footer__row{
+                flex-wrap: wrap;
+                
+            }
+
+            .promo-hero__left{
+                margin-bottom: vw3(58);
+            }
+
+        }
+        @include for-sm(){
+            background-size: contain;
+        }
+
+        &-img2{
+            position: absolute;
+            top: vw(370);
+            width: vw(845);
+            height: vw(525);
+            right: vw(352);
+            @include for-md(){
+                display: none;
+            }
+        }
+    }
+
     &--test{
         background: url(../img/footer-second.png) no-repeat center top;
         background-size: cover;
@@ -837,6 +874,11 @@ header{
         &--test{
             width: vw(271);
             height: vw(452);
+        }
+
+        &--center{
+            align-self: flex-end;
+            margin: 0 auto;
         }
 
         @include for-md(){
@@ -2524,8 +2566,8 @@ header{
         
     }
     &__left{
-        width: 43%;
-        padding-left: vw(170);
+        width: vw(895);
+        padding-left: vw(95);
         @include for-md{
             padding: 0 30px;
             width: auto;
@@ -2534,6 +2576,13 @@ header{
             padding: 0 15px;
         }
         
+    }
+    h2{
+        font-size: vw(122);
+        line-height: vw(104);
+        font-family: $EB;
+        margin: vw(143) 0 vw(45);
+        font-weight: 400;
     }
     &__subtitle{
         margin-top: vw(20);
@@ -2587,6 +2636,11 @@ header{
         max-width: 100%;
         top: vw(-27);
         right: 0;
+
+        &--big{
+            height: vw(1603);
+            width: vw(1019);
+        }
         @include for-md{
             display: none;
             position: relative;
@@ -2611,6 +2665,7 @@ header{
         padding: 40px 15px 0;
     }
     .container{
+        overflow: visible;
         @include for-md{
             padding: 0;
         }
@@ -2626,6 +2681,12 @@ header{
         bottom: vw(-107);
         @include for-md{
            left: 0;
+        }
+    }
+
+    &--no-bg{
+        &:before{
+            display: none;
         }
     }
     &__item{
@@ -2653,7 +2714,9 @@ header{
     }
     &__row{
         display: flex;
-        padding-left: vw(100);      
+        padding-left: vw(100);     
+        flex-wrap: wrap; 
+        justify-content: space-between;
         @include for-md{
             flex-direction: column;
             padding: 0;
@@ -2699,6 +2762,69 @@ header{
             margin-top: 10px;
         }
         
+    }
+
+    &__item-list{
+
+        position: relative;
+        width: 40%;
+        margin-top: vw(165);
+
+        &--1{
+            &:before{
+                content: '';
+                position: absolute;
+                width: vw(928);
+                height: vw(592);
+                left: vw(-148);
+                top: vw(-91);
+                background: url(../img/health-list-item-1.png) no-repeat left center;
+                background-size: contain;
+            }
+        }
+        h3{
+            position: relative;
+            font-size: vw(60);
+            line-height: vw(50);
+            font-weight: 400;
+            margin: 0;
+            margin-bottom: vw(30);
+
+            sup{
+                font-size: vw(30);
+                line-height: 0;
+                position: relative;
+                top: -20px;
+            }
+        }
+        ul{
+            position: relative;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li{
+            font-size: vw(27);
+            line-height: vw(38);
+            font-weight: 600;
+            color: #ED057D;
+            &:before{
+                content: "•";
+                margin: 0 vw(10);
+                
+            }
+        }
+        li + li{
+            margin-top: vw(5);
+        }
+        p{
+            position: relative;
+            margin-top: vw(60);
+            font-size: vw(27);
+            line-height: vw(38);
+            font-weight: 300;
+        }
     }
     &__title{
         font-size: vw(144);
@@ -3080,6 +3206,199 @@ header{
     }
     &__explanation-text{
         margin-top: vw(56);
+    }
+}
+.advices{
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    padding: vw(255) 0;
+    background: url(../images/food1-bg.jpg) no-repeat center vw(870);
+    background-size: contain;
+
+    @include for-md(){
+       background-position: center vw3(2500);
+        
+    }
+    .container{
+        overflow: visible;
+    }
+    &__row{
+        display: flex;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        padding-left: vw(95);
+        margin-right: vw(-95);
+
+        @include for-md(){
+            padding-left: 0;
+            margin-right: 0;
+        }
+    }
+    &__item-container{
+        padding-right: vw(95);
+        margin-bottom: vw(130);
+        box-sizing: border-box;
+
+        &--desk{
+            @include for-md(){
+                display: none;
+            }
+        }
+
+        &--mob{
+            display: none;
+            @include for-md(){
+                display: block;
+            }
+        }
+
+        @include for-md(){
+            padding-right: 0;
+            margin-bottom: vw3(100);
+        }
+
+        &--big-width{
+            width: 57%;
+            @include for-md(){
+                width: 100%;
+            }
+        }
+        &--lit-width{
+            width: 43%;
+            @include for-md(){
+                width: 100%;
+            }
+        }
+        &--big-mt{
+            margin-top: vw(554);
+            @include for-md(){
+               margin-top: 0;
+            }
+        }
+    }
+    &__image-mob{
+        display: none;
+        @include for-md(){
+            display: block;
+            margin: vw3(80) auto;
+            max-width: 100%;
+        }
+    }
+    h2{
+        font-size: vw(144);
+        line-height: vw(114);
+        font-family: $EB;
+        font-weight: 400;
+        margin: 0 0 vw(46) 0;
+
+        &.lit{
+            @include for-md(){
+                font-size: vw3(87);
+                line-height: vw3(114);
+            }
+        }
+        @include for-md(){
+            font-size: vw3(128);
+            line-height: vw3(114);
+            margin: 0 0 vw3(64) 0;
+
+        }
+        @include for-tiny-mob(){
+            font-size: vw3(80);
+            line-height: vw3(70);
+        }
+    }
+    h3{
+        position: relative;
+        font-size: vw(144);
+        line-height: vw(114);
+        font-family: $EB;
+        font-weight: 400;
+        color: #ED057D;
+        margin: 0 0 vw(42) 0;
+
+        @include for-md(){
+            font-size: vw3(100);
+            line-height: vw3(92);
+            margin: 0 0 vw3(64) 0;
+        }
+
+        &.mb-big{
+            margin-bottom: vw(45);
+            @include for-md(){
+                margin: 0 0 vw3(64) 0;
+            }
+        }
+    }
+    &__text{
+        position: relative;
+        font-size: vw(27);
+        line-height: vw(48);
+        font-family: $MyRiad;
+
+        @include for-md(){
+            font-size: vw3(27);
+            line-height: vw3(48);
+        }
+
+        &--light{
+            font-weight: 300;
+            color: #6A489C;
+        }
+        &--semibold{
+            font-weight: 600;
+            color: #ED057D;
+        }
+    }
+    &__text + &__text{
+        margin-top: vw(50);
+    }
+    &__item{
+        position: relative;
+        &--padding-top{
+            box-sizing: border-box;
+            padding-top: vw(114);
+            &::before{
+                content: '';
+                position: absolute;
+                right: vw(-72);
+                top: vw(55);
+                height: vw(689);
+                width: vw(825);
+                background: url(../images/advices-item-before.png) no-repeat top right;
+                background-size: contain;
+
+                @include for-md(){
+                  
+                    height: vw3(718);
+                    width: 130%;
+                    right: vw3(-48);
+                    top: vw3(-100);
+                }
+            }
+
+            @include for-md(){
+                padding-top: 0;
+            }
+        }
+        &-img1{
+            position: absolute;
+            top: 100%;
+            height: vw(525);
+            width: vw(845);
+            margin-top: vw(220);
+
+            @include for-md(){
+                position: relative;
+                top: auto;
+
+                width: vw3(545);
+                height: vw3(356);
+                margin: vw3(62) auto 0;
+            }
+        }
+        
     }
 }
 
