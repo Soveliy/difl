@@ -727,19 +727,45 @@ header{
     background-size: cover;
     &__about{
         margin-top: vw(62);
-        display: flex;
+       
         align-items: flex-start;
+        &--desktop{
+            display: flex;
+
+            @include for-md(){
+                display: none;
+            }
+        }
+        &--mobile{
+            display: none;
+            @include for-md(){
+                display: flex;
+                justify-content: center;
+                margin-top: vw3(30);
+            }
+        }
         &-logo{
             height: vw(70);
             width: vw(120);
             flex-shrink: 0;
             margin-right: vw(31);
+
+            @include for-md(){
+                height: vw3(70);
+                width: vw3(120);
+                flex-shrink: 0;
+                margin-right: vw3(31);
+            }
         }
         &-text{
             font-size: vw(12);
             line-height: vw(16);
             color: #AA7E9D;
             font-family: $Kiev;
+            @include for-md(){
+                font-size: vw3(12);
+                line-height: vw3(16);
+            }
         }
     }
     &--second{
@@ -1387,6 +1413,11 @@ header{
         font-family: $MyRiad;
         color: #6A489C;
 
+        @include for-md(){
+            font-size: vw3(27);
+            line-height: vw3(34);
+        }
+
     }
     &__image{
         position: absolute;
@@ -1424,6 +1455,10 @@ header{
         right: vw2(18);
         bottom: vw2(165);
         width: vw2(125);
+        display: none;
+        @include for-md(){
+            display: block;
+        }
     }
 }
 
@@ -1438,6 +1473,10 @@ header{
     @include for-md(){
         margin-top: vw2(30);
         padding-top: vw2(40);
+      
+    }
+
+    @include for-sm(){
         background: url(../img/promo-mobile.png) center center no-repeat;
         background-position: center vw2(1600);
     }
@@ -1446,7 +1485,14 @@ header{
     .container{
         overflow: visible;
     }
-
+    &__item__image-3{
+        position: absolute;
+        width: vw(630);
+        height: vw(507);
+        right: vw(-18);
+        top: 0;
+    }
+   &--after{
     &:after{
         content: '';
         position: absolute;
@@ -1490,6 +1536,7 @@ header{
 
 
     }
+   }
 
     &:before{
         content: '';
@@ -1516,6 +1563,22 @@ header{
             margin-right: 0;
         }
     }
+    &__item-big-decor{
+        position: absolute;
+        width: vw(1292);
+        height: vw(787);
+        max-width: initial;
+        right: vw(-72);
+        top: vw(-770);
+
+        @include for-md(){
+          
+            height: vw3(560);
+            width: vw3(700);
+            top: vw3(-628);
+            right: vw3(-48);
+        }
+    }
     &__decor-image{
         position: absolute;
         left: 0;
@@ -1537,11 +1600,7 @@ header{
         padding-right: vw(55);
         margin-bottom: vw(56);
 
-        &--mt-mobile{
-            @include for-md(){
-                margin-top: vw2(350);
-            }
-        }
+       
 
         @include for-md(){
             width: 100%;
@@ -1549,11 +1608,41 @@ header{
             margin-bottom: vw2(50);
         }
 
+        &--with-decor-2{
+            @include for-md(){
+                display: none;
+            }
+        }
+        &--with-decor-lit{
+            padding-top: vw(50);
+            @include for-md(){
+                padding-top: 0;
+                order: 1;
+            }
+        }
+
         &--big-margin{
             margin-top: vw(228);
 
             @include for-md(){
                 margin-top: 0;
+            }
+        }
+        &--big-margin-2{
+            margin-top: vw(622);
+            @include for-md(){
+                margin-top: 0;
+            }
+        }
+
+        &--big-margin-2-mobile{
+            @include for-md(){
+                margin-top: vw3(300);
+            }
+        }
+        &--mt-mobile{
+            @include for-md(){
+                margin-top: vw2(350);
             }
         }
         
