@@ -725,10 +725,15 @@ header{
 .footer{
     background: url(../img/footer-bg-desktop.png) no-repeat center bottom;
     background-size: cover;
+
+   
     &__about{
         margin-top: vw(62);
        
         align-items: flex-start;
+        @include for-md(){
+            flex-direction: column;
+        }
         &--desktop{
             display: flex;
 
@@ -742,6 +747,13 @@ header{
                 display: flex;
                 justify-content: center;
                 margin-top: vw3(30);
+            }
+        }
+        &--abs{
+            position: absolute;
+            bottom: vw(50);
+            @include for-md(){
+                bottom: vw3(70);
             }
         }
         &-logo{
@@ -763,6 +775,7 @@ header{
             color: #AA7E9D;
             font-family: $Kiev;
             @include for-md(){
+                margin-top: vw3(29);
                 font-size: vw3(12);
                 line-height: vw3(16);
             }
@@ -810,6 +823,19 @@ header{
             @include for-md(){
                 display: none;
             }
+        }
+    }
+    &--four{
+        position: relative;
+        background: url(../img/footer-four-bg.png) no-repeat center bottom;
+        background-size: cover;
+        padding-top: vw(365);
+        margin-top: vw(-365);
+        padding-bottom: vw(75);
+
+        .container{
+            position: static;
+            overflow: visible;
         }
     }
 
@@ -884,6 +910,16 @@ header{
         @include for-md(){
             width: vw2(80);
             height: vw2(170);
+        }
+
+        &--abs{
+            position: absolute;
+            top: vw(-100);
+            right: vw(84);
+
+            @include for-md(){
+                position: static;
+            }
         }
     }
     &__row{
@@ -1814,6 +1850,7 @@ header{
             height: 100%;
             top: 0;
             background: url(../img/promo-mobile.png) center center no-repeat;
+            background-size: cover;
         }
     }
 
@@ -2769,8 +2806,12 @@ header{
     &__item-list{
 
         position: relative;
-        width: 40%;
+        width: 38%;
         margin-top: vw(165);
+
+        @include for-md(){
+            width: 100%;
+        }
 
         &--1{
             &:before{
@@ -2782,21 +2823,52 @@ header{
                 top: vw(-91);
                 background: url(../img/health-list-item-1.png) no-repeat left center;
                 background-size: contain;
+
+                @include for-md(){
+                    width: 100%;
+                    height: vw3(700);
+                }
+            }
+        }
+        &--2{
+            &:before{
+                content: '';
+                position: absolute;
+                width: vw(895);
+                height: vw(779);
+                right: vw(-80);
+                top: vw(-210);
+                background: url(../img/health-list-item-2.png) no-repeat left center;
+                background-size: contain;
+
+                @include for-md(){
+                    width: 100%;
+                    height: vw3(700);
+                }
             }
         }
         h3{
             position: relative;
             font-size: vw(60);
             line-height: vw(50);
-            font-weight: 400;
+            font-weight: 300;
             margin: 0;
             margin-bottom: vw(30);
+
+            @include for-md{
+                font-size: vw3(60);
+                line-height: vw3(50);
+                margin-bottom: vw3(40);
+            }
 
             sup{
                 font-size: vw(30);
                 line-height: 0;
                 position: relative;
-                top: -20px;
+                top: vw(-20);
+
+                font-size: vw3(30);
+                top: vw3(-10);
             }
         }
         ul{
@@ -2808,9 +2880,14 @@ header{
 
         li{
             font-size: vw(27);
-            line-height: vw(38);
+            line-height: vw(48);
             font-weight: 600;
             color: #ED057D;
+
+            @include for-md(){
+                font-size: vw3(27);
+                line-height: vw3(48);
+            }
             &:before{
                 content: "•";
                 margin: 0 vw(10);
@@ -2819,13 +2896,19 @@ header{
         }
         li + li{
             margin-top: vw(5);
+
         }
         p{
             position: relative;
-            margin-top: vw(60);
+            margin-top: vw(90);
             font-size: vw(27);
             line-height: vw(38);
             font-weight: 300;
+
+            @include for-md(){
+            font-size: vw3(27);
+            line-height: vw3(48);
+            }
         }
     }
     &__title{
@@ -2873,6 +2956,11 @@ header{
 .bottom-question{
     position: relative;
     padding-top: vw(185);
+    z-index: 2;
+    .container{
+        overflow: visible;
+    }
+
     .container{
         @include for-md{
             padding: 0;
@@ -2884,20 +2972,7 @@ header{
     // @include for-tiny-tablet{
     //     padding: 50px 15px 0;
     // }
-    &::after{
-        content: "";
-        position: absolute;
-        width: vw(129);
-        height: vw(371);
-        background-image: url(../img/bottom-question.png);
-        background-size: cover;
-        background-repeat: no-repeat;
-        right: vw(88);
-        top: vw(153);
-        @include for-md{
-           display: none;
-        }
-    }
+
     &--food{
         padding-top: vw(40);
         @include for-md{
