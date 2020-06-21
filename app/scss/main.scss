@@ -819,7 +819,7 @@ header{
         position: relative;
         background: url(../images/footer-third-bg.jpg) no-repeat center 0;
         background-size: cover;
-        padding-top: vw(750);
+        padding-top: vw(770);
         margin-top: vw(-750);
         padding-bottom: vw(100);
 
@@ -3436,6 +3436,9 @@ header{
     }
     &__row{
         display: flex;
+        &--align-items-center{
+            align-items: center;
+        }
         @include for-md{
            flex-direction: column;
         }
@@ -3623,7 +3626,9 @@ header{
 
         
     }
-
+    &__img{
+        margin-top: vw-con(10);
+    }
     &--food3{
         &:before{
             content: '';
@@ -3636,11 +3641,20 @@ header{
             background-size: contain;
         }
     }
+    
     &__content{
         box-sizing: border-box;
 
         &--pl-left{
             padding-left: vw(55);
+        }
+        &--lh{
+            p{
+                line-height: vw(48);
+                @include for-md{
+                    line-height: vw3(48);
+                }
+            }
         }
 
         p{
