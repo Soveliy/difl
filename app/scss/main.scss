@@ -8,8 +8,8 @@ html{
 body{
     height: 100%;
     font-family: $MyRiad;
-    font-size: vw(27);
-    line-height: vw(34);
+    font-size: vw-con(27);
+    line-height: vw-con(34);
     color: $purple2;
     position: relative;
     overflow-x: hidden;
@@ -119,14 +119,11 @@ header{
     display: flex;
     flex-direction: column;
     height: 100%;
-    @include for-md(){
-        overflow-x: hidden;
-    }
+    
 }
 .container{
     position: relative;
-    overflow: hidden;
-    max-width: vw(1760);
+    max-width: vw-con(1760);
     margin: 0 auto;
     width: 100%;
     @include for-md(){
@@ -140,6 +137,7 @@ header{
 }
 .header{
     position: relative;
+    z-index: 5000;
     padding: vw(40) 0;
     @include for-md(){
         padding: vw2(20) 0;
@@ -212,7 +210,23 @@ header{
         box-sizing: border-box;
         padding: vw2(20) vw2(23) vw2(25);
     }
-
+    &__name{
+        margin: vw3(86) 0 vw3(46);
+        font-size: vw3(56);
+        line-height: vw(48);
+        color: $white;
+        font-family: $EB;
+    }
+    .footer__about-text{
+        text-align: left;
+        color: $white;
+    }
+    .footer-inside__text{
+        margin-top: vw3(21);
+        font-size: vw3(26);
+        line-height: vw3(25);
+        color: rgba($white, 0.65);
+    }
     &__header{
         position: relative;
         margin-bottom: vw2(45);
@@ -229,6 +243,8 @@ header{
         margin-top: 65px;
     }
     .mobile__link{
+        position: relative;
+        z-index: 10;
         display: block;
     }
     &__link-img{
@@ -263,11 +279,11 @@ header{
         display: flex;
     }
     &__list-item + &__list-item{
-        margin-left: vw(18);
+        margin-left: vw-con(18);
     }
     &__link{
-        font-size: vw(24);
-        line-height: vw(27);
+        font-size: vw-con(24);
+        line-height: vw-con(27);
         color: $pink;
         font-weight: 300;
     }
@@ -369,7 +385,7 @@ header{
 
         @include for-md(){
             position: absolute;
-            bottom: vw2(-40);
+            bottom: vw2(-85);
             right: 0;
             margin: 0;
             height: vw2(125)
@@ -723,7 +739,7 @@ header{
     }
 }
 .footer{
-    background: url(../img/footer-bg-desktop.png) no-repeat center bottom;
+    background: url(../img/footer-bg-desktop.png) no-repeat center 0;
     background-size: cover;
 
    
@@ -731,9 +747,7 @@ header{
         margin-top: vw(62);
        
         align-items: flex-start;
-        @include for-md(){
-            flex-direction: column;
-        }
+
         &--desktop{
             display: flex;
 
@@ -775,16 +789,27 @@ header{
             color: #AA7E9D;
             font-family: $Kiev;
             @include for-md(){
-                margin-top: vw3(29);
                 font-size: vw3(12);
                 line-height: vw3(16);
             }
         }
+
+        &--row{
+            @include for-md(){
+                flex-direction: column;
+            }
+
+            .footer__about-text{
+                @include for-md(){
+                    margin-top: vw3(20);
+                }
+            }
+        }
     }
     &--second{
-        background: url(../img/footer-second.png) no-repeat center bottom;
+        background: url(../img/footer-second.png) no-repeat center 0;
         background-size: cover;
-        padding-top: vw(270);
+        padding-top: vw(350);
         margin-top: vw(-555);
         padding-bottom: vw(30);
     }
@@ -792,10 +817,19 @@ header{
 
     &--third{
         position: relative;
-        background: url(../images/footer-third-bg.jpg) no-repeat center bottom;
+        background: url(../images/footer-third-bg.jpg) no-repeat center 0;
         background-size: cover;
-        padding-top: vw(900);
-        margin-top: vw(-754);
+        padding-top: vw(750);
+        margin-top: vw(-750);
+        padding-bottom: vw(100);
+
+        &-mediumn-param{
+            padding-top: vw(800);
+            margin-top: vw(-1000);
+        }
+        .container{
+            position: static;
+        }
         @include for-md(){
             background: url(../images/third-mobile-bg.jpg) no-repeat center bottom;
             background-size: cover;
@@ -819,7 +853,7 @@ header{
             top: vw(370);
             width: vw(845);
             height: vw(525);
-            right: vw(352);
+            right: vw-con(450);
             @include for-md(){
                 display: none;
             }
@@ -827,7 +861,7 @@ header{
     }
     &--four{
         position: relative;
-        background: url(../img/footer-four-bg.png) no-repeat center bottom;
+        background: url(../img/footer-four-bg.png) no-repeat center 0;
         background-size: cover;
         padding-top: vw(365);
         margin-top: vw(-365);
@@ -845,7 +879,16 @@ header{
         padding-top: vw(270);
         margin-top: vw(-300);
         z-index: -1;
+        
         position: relative;
+
+        .footer-inside__text{
+            margin-top: vw(35);
+        }
+
+        .container{
+            overflow: visible;
+        }
         .footer__row{
             align-items: flex-end;
             width: 100%;
@@ -898,6 +941,8 @@ header{
         width: vw(128);
         height: vw(371);
         &--test{
+            position: absolute;
+            top: -100px;
             width: vw(271);
             height: vw(452);
         }
@@ -906,7 +951,14 @@ header{
             align-self: flex-end;
             margin: 0 auto;
         }
+        &--margin-auto{
+            margin: auto;
 
+            @include for-md(){
+                margin-right: auto;
+                margin-left: 0;
+            }
+        }
         @include for-md(){
             width: vw2(80);
             height: vw2(170);
@@ -916,6 +968,10 @@ header{
             position: absolute;
             top: vw(-100);
             right: vw(84);
+
+            &-medium-top{
+                top: vw(500);
+            }
 
             @include for-md(){
                 position: static;
@@ -954,6 +1010,9 @@ header{
         padding-top: vw(91);
         padding-bottom: vw(60);
 
+        &--no-padding{
+            padding-bottom: 0 ;
+        }
         &--desktop{
             @include for-md(){
                 display: none;
@@ -1015,6 +1074,10 @@ header{
             font-size: vw2(18);
             line-height: vw2(21);
         }
+
+        &--mt-0{
+            margin-top: 0;
+        }
     }
     &__contraindications{
         margin-top: vw(-15);
@@ -1041,6 +1104,13 @@ header{
             line-height: 12px;
         }
     }
+    &__left{
+
+        &--flex{
+            display: flex;
+            align-items: flex-end;
+        }
+    }
 }
 .promo-hero{
     padding: vw(215) 0;
@@ -1051,7 +1121,7 @@ header{
     }
 
     &:before{
-        top: vw(-183);
+        top: vw(-350);
         content: '';
         position: absolute;
         width: 100%;
@@ -1067,6 +1137,19 @@ header{
         flex-shrink: 0;
         margin-right: vw(133);
         width: vw(581);
+
+        &--desk{
+            display: block;
+            @include for-md(){
+                display: none;
+            }
+        }
+        &--mobile{
+            display: none;
+            @include for-md(){
+                display: block;
+            }
+        }
 
         @include for-md(){
             margin-top: vw2(25);
@@ -1088,7 +1171,9 @@ header{
 
     &__image{
         display: block;
-        margin-bottom: vw(17);
+        margin: 0 auto vw(17);
+        width: vw(581);
+        height: vw(424);
 
         @include for-md(){
             margin-bottom: vw2(12.5);
@@ -1131,9 +1216,9 @@ header{
         content: '';
         position: absolute;
         right: 0;
-        top: vw(210);
-        width: vw(919);
-        height: vw(791);
+        top: vw(100);
+        width: vw-con(919);
+        height: vw-con(800);
         background: url(../img/list-items/2.png) no-repeat center right;
         background-size: contain;
 
@@ -1147,9 +1232,9 @@ header{
         content: '';
         position: absolute;
         left: 0;
-        bottom: vw(-32);
-        width: vw(1052);
-        height: vw(694);
+        bottom: vw-con(-50);
+        width: vw-con(900);
+        height: vw-con(694);
         background: url(../img/list-items/3.png) no-repeat left center;
         background-size: contain;
 
@@ -1269,11 +1354,12 @@ header{
                 position: absolute;
                 left: 50%;
                 top: 50%;
-                width: vw(845);
-                height: vw(545);
+                width: vw-con(750);
+                height: vw-con(450);
                 transform: translate(-48%,-52%);
                 background: url(../img/list-items/1.png) center center no-repeat;
                 background-size: contain;
+                z-index: -1;
 
                 @include for-md(){
                     height: vw2(270);
@@ -1428,6 +1514,22 @@ header{
 .footer-inside{
     padding: vw(175) 0 vw(29);
 
+    .footer__about {
+        margin-top: 0;
+        flex-shrink: 0;
+        margin-right: vw(60);
+
+        @include for-md(){
+            margin-top: vw2(20);
+        }
+    }
+    .footer__row{
+        margin-bottom: vw(15);
+
+        @include for-md(){
+            margin-bottom: vw2(15);
+        }
+    }
     &__text{
         text-align: center;
         font-size: vw(46);
@@ -1445,6 +1547,7 @@ header{
 .hero-second{
     position: relative;
     padding: vw(80) 0;
+    z-index: 2;
 
     @include for-md(){
         padding: vw2(37) 0;
@@ -1478,9 +1581,23 @@ header{
         margin-bottom: vw(48);
         font-weight: 400;
 
+        &--big{
+            font-size: vw(72);
+            line-height: vw(60);
+        }
+        &--very-big{
+            font-size: vw(144);
+            line-height: vw(92);
+            margin-bottom: vw-con(35);
+
+            @include for-md(){
+                margin-bottom: vw3(19);
+            }
+        }
+
         @include for-md(){
-            font-size: vw2(28);
-            line-height: vw2(24);
+            font-size: vw3(60);
+            line-height: vw3(48);
             margin-top: vw2(29);
         }
     }
@@ -1490,6 +1607,10 @@ header{
         line-height: vw(34);
         font-family: $MyRiad;
         color: #6A489C;
+
+        & + &{
+            margin-top: vw(45);
+        }
 
         @include for-md(){
             font-size: vw3(27);
@@ -1547,7 +1668,12 @@ header{
     padding-top: vw(77);
     background: url(../img/hero-promo-before.png) no-repeat  center vw(735);
     background-size: contain;
-
+    &--margin-negatitve{
+        margin-top: vw(-100);
+    }
+    &--margin-medium{
+        margin-top: vw(70);
+    }
     @include for-md(){
         margin-top: vw2(30);
         padding-top: vw2(40);
@@ -1567,7 +1693,7 @@ header{
         position: absolute;
         width: vw(630);
         height: vw(507);
-        right: vw(-18);
+        right: vw-con(-34);
         top: 0;
     }
    &--after{
@@ -1575,8 +1701,8 @@ header{
         content: '';
         position: absolute;
         right: 0;
-        bottom: vw(1302);
-        width: vw(1176);
+        bottom: 38.46875vw;
+        width: 34.875vw;
         height: vw(702);
         background: url(../img/guides-after.png) no-repeat center right;
         background-size: contain;
@@ -1636,6 +1762,17 @@ header{
         display: flex;
         flex-wrap: wrap;
         margin-right: vw(-55);
+        box-sizing: border-box;
+
+        &--pl-l{
+            padding-left: vw(95);
+            .guides-item__value-container{
+                margin-left: 0;
+            }
+            @include for-md(){
+                padding-left: 0;
+            }
+        }
 
         @include for-md(){
             margin-right: 0;
@@ -1660,11 +1797,22 @@ header{
     &__decor-image{
         position: absolute;
         left: 0;
-        bottom: vw(418);
+        bottom: vw(300);
         width: vw(652);
         height: vw(1039);
         background: url(../img/guiides-container-img.png) no-repeat center left;
         background-size: contain;
+
+        @include for-md(){
+            display: none;
+        }
+    }
+    &__decor-image-2{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: vw(593);
+        height: vw(716);
 
         @include for-md(){
             display: none;
@@ -1678,7 +1826,10 @@ header{
         padding-right: vw(55);
         margin-bottom: vw(56);
 
-       
+       &--w50{
+           width: 50%;
+       }
+
 
         @include for-md(){
             width: 100%;
@@ -1698,6 +1849,17 @@ header{
                 order: 1;
             }
         }
+        
+        &--negative-margin{
+            margin-top: vw(-183);
+        }
+        &--negative-margin-big{
+            margin-top: vw(-280);
+            @include for-md(){
+                margin-top: 0;
+            }
+        }
+      
 
         &--big-margin{
             margin-top: vw(228);
@@ -1733,6 +1895,12 @@ header{
             }
 
             
+        }
+        &--big-padding{
+            padding-top: vw(680);
+            @include for-md(){
+                padding-top: 0;
+            }
         }
         .promo-hero__left{
             width: 100%;
@@ -1786,6 +1954,8 @@ header{
         }
     }
     &__value{
+        height: 100%;
+       
         margin: 0 auto;
     }
     &__title{
@@ -1828,12 +1998,42 @@ header{
     }
     &__text-explanation{
         margin-top: vw(10);
-        font-size: vw(12);
-        line-height: vw(17);
+        font-size: vw-con(12);
+        line-height: vw-con(17);
         color: $light-purple;
         @include for-md{
             font-size: vw3(15);
             line-height: vw3(21);
+        }
+    }
+    &__image-3{
+        position: absolute;
+        width: vw(730);
+        height: vw(538);
+        max-width: initial;
+        top: -16.22917vw;
+        right:-3.86146vw ;
+        @include for-md(){
+            width: vw3(500);
+            height: vw3(538);
+            right: vw3(-73);
+            top: vw3(-600);
+        }
+
+    }
+    &__image-5{
+        position: absolute;
+        left: vw(-95);
+        top: vw(-500);
+        width: vw(788);
+        height: vw(492);
+
+        @include for-md(){
+            position: static;
+            margin: 0 auto vw3(150);
+            width: auto;
+            height: auto;
+            display: block;
         }
     }
 }
@@ -1849,11 +2049,11 @@ header{
     }
 
     &:before{
-        top: vw(-360);
+        top: vw(-600);
         content: '';
         position: absolute;
         width: 100%;
-        height: vw(1215);
+        height: vw(1700);
         background: url(../img/hero-promo-before.png) center center no-repeat;
         background-size: cover;
         @include for-md(){
@@ -2161,7 +2361,7 @@ header{
 }
 
 @function vw($px) {
-  @return (($px/1920) * 100)+vw;
+  @return (($px/1920) * 100) * 0.7 +vw;
 }
 
 
@@ -2437,11 +2637,13 @@ header{
         }
     }
     &--mobile{
+        width: 0;
         visibility: hidden;
         height: 0;
         position: relative;
         overflow: hidden;
         @include for-md(){
+            width: auto;
             visibility: visible;
             height: auto;
             position: static;
@@ -2613,7 +2815,7 @@ header{
         
     }
     &__left{
-        width: vw(800);
+        width: vw-con(800);
         padding-left: vw(95);
         @include for-md{
             padding: 0 vw3(30);
@@ -2630,6 +2832,30 @@ header{
         font-family: $EB;
         margin: vw(143) 0 vw(45);
         font-weight: 400;
+
+        @include for-md(){
+            font-size: vw3(80);
+            line-height: vw3(72);
+        }
+    }
+    &__flex-title{
+        display: flex;
+        align-items: flex-end;
+
+        img{
+            flex-shrink: 0;
+            margin-right: vw(58);
+            @include for-sm(){
+                max-width: 50%;
+                margin: 0 auto vw3(20);
+            }
+        }
+
+        @include for-sm(){
+            align-items: flex-start;
+            flex-direction: column;
+            margin-bottom: vw3(20);
+        }
     }
     &__subtitle{
         margin-top: vw(20);
@@ -2669,6 +2895,15 @@ header{
         //     margin-top: 20px;
         // }
     }
+
+    a{
+        color: #6A489C;
+        text-decoration: underline;
+
+        &:hover{
+            text-decoration:none
+        }
+    }
     &__text + &__text{
         margin-top: vw(75);
         @include for-md{
@@ -2684,11 +2919,11 @@ header{
         height: vw(1009);
         max-width: 100%;
         top: vw(-27);
-        right: 0;
+        right: vw(-35);
 
         &--big{
-            height: vw(1603);
-            width: vw(1019);
+            height: vw(1800);
+            width: vw(1200);
         }
         @include for-md{
             display: none;
@@ -2704,12 +2939,115 @@ header{
         }
     }
 }
+.health-listing{
+    position: relative;
+    box-sizing: border-box;
+    padding-top: vw(30);
+    padding-left: vw(95);
+
+    &:before{
+        content: '';
+        position: absolute;
+        top: vw(-200);
+        right: 0;
+        background: url(../img/hero-listing-before.png) top right no-repeat;
+        background-size: contain;
+        width: vw(895);
+        height: vw(779);
+
+        @include for-md(){
+            width: 80%;
+            height: vw3(400);
+        }
+    }
+    &:after{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        background: url(../img/hero-listing-after.png) left bottom no-repeat;
+        background-size: contain;
+        width: vw(793);
+        height: vw(575);
+        @include for-md(){
+            top: 70%;
+            width: 80%;
+            height: vw3(400);
+        }
+    }
+    @include for-md(){
+        padding-left: 0;
+    }
+    .container{
+        overflow: visible;
+    }
+    &__item{
+        position: relative;
+    }
+    h2{
+        font-size: vw(122);
+        line-height: vw(104);
+        font-family: $EB;
+        font-weight: 400;
+       margin: 0;
+       @include for-md(){
+        font-size: vw3(80);
+        line-height: vw3(72);
+    }
+    }
+    &__flex-title{
+        display: flex;
+        align-items: flex-end;
+
+
+        img{
+            flex-shrink: 0;
+            margin-right: vw(58);
+            @include for-sm(){
+                max-width: 50%;
+                margin: 0 auto vw3(20);
+            }
+        }
+
+        @include for-sm(){
+            align-items: flex-start;
+            flex-direction: column;
+            margin-bottom: vw3(20);
+        }
+    }
+    &__item{
+        position: relative;
+        z-index: 2;
+        box-sizing: border-box;
+
+        & + &{
+            margin-top: vw(80);
+        }
+        &--left{
+            padding-left: vw(125);
+            @include for-md(){
+                padding-left: 0;
+            }
+
+            .hero-health__text{
+                margin-left:vw(390);
+                @include for-md(){
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+    
+}
 .health-questions{
     position: relative;
     padding-top: vw(212);
     @include for-md{
         padding: vw3(70) vw3(30) 0;
     } 
+    &--no-padding{
+        padding-top: 0;
+    }
     // @include for-tiny-tablet{
     //     padding: 40px 15px 0;
     // }
@@ -2829,12 +3167,13 @@ header{
             &:before{
                 content: '';
                 position: absolute;
-                width: vw(928);
-                height: vw(592);
-                left: vw(-148);
-                top: vw(-91);
+                width: vw-con(928);
+                height: vw-con(592);
+                left: vw-con(-148);
+                top: vw-con(-150);
                 background: url(../img/health-list-item-1.png) no-repeat left center;
                 background-size: contain;
+                z-index: -1;
 
                 @include for-md(){
                     width: 100%;
@@ -2843,19 +3182,45 @@ header{
             }
         }
         &--2{
+
+          
             &:before{
                 content: '';
                 position: absolute;
-                width: vw(895);
-                height: vw(779);
-                right: vw(-80);
-                top: vw(-210);
+                width: vw-con(895);
+                height: vw-con(779);
+                right: vw-con(-80);
+                top: vw-con(-300);
                 background: url(../img/health-list-item-2.png) no-repeat left center;
                 background-size: contain;
+                z-index: -1;
+
+              
 
                 @include for-md(){
                     width: 100%;
                     height: vw3(700);
+                }
+            }
+
+            &--right-neg{
+                &:after{
+                    content: '';
+                    position: absolute;
+                    height: vw(247);
+                    width: vw(227);
+                    background: url(../img/list-before.svg) center center no-repeat;
+                    background-size: contain;
+                    right: 105%;
+                    top: vw(-50);
+
+                    @include for-md(){
+                        display: none;
+                    }
+                }
+
+                &::before{
+                    right: vw(-180);
                 }
             }
         }
@@ -2912,6 +3277,9 @@ header{
             margin-top: vw(5);
 
         }
+        h3 + p{
+            margin-top: 0;
+        }
         p{
             position: relative;
             margin-top: vw(90);
@@ -2924,14 +3292,28 @@ header{
             line-height: vw3(48);
             }
         }
+
+        p + p{
+            margin-top: vw(50);
+        }
     }
     &__title{
-        font-size: vw(144);
-        line-height: vw(114);
+        font-size: vw(122);
+        line-height: vw(104);
         color: $purple2;
         font-family: $EB;
         &--pink{
             color: $pink;
+        }
+
+        &--lit{
+            font-size: vw(122);
+            line-height: vw(144);
+
+            @include for-md(){
+                font-size: vw3(80);
+                line-height: vw3(72);
+            }
         }
         @include for-md{
             margin-bottom: vw3(20);
@@ -2940,7 +3322,7 @@ header{
         } 
     }
     &__text-container{
-        margin-top: vw(50);
+        margin-top: vw(35);
     }
     &__text{
         line-height: vw(48);
@@ -2966,6 +3348,45 @@ header{
             margin-top: vw3(56);
         }
     }
+    &__about{
+        position: relative;
+        margin-top: vw(138);
+
+        @include for-md(){
+            display: flex;
+            align-items: center;
+            margin: vw3(75) 0;
+        }
+
+        img{
+            position: absolute;
+            left: vw(-100);
+            width: vw(122);
+            height: vw(255);
+            top: 50%;
+            transform: translateY(-50%);
+
+            @include for-md(){
+                width: vw3(61);
+                height: vw3(150);
+                position: static;
+                transform: none;
+                flex-shrink: 0;
+                margin-right: vw3(20);
+            }
+        }
+        p{
+            font-size: vw(27);
+            line-height: vw(41);
+            color: #ED057D;
+            font-weight: 300;
+
+            @include for-md(){
+                font-size: vw3(24);
+                line-height: vw3(35);
+            }
+        }
+    }
 }
 .bottom-question{
     position: relative;
@@ -2980,18 +3401,38 @@ header{
             padding: 0;
         }
     }
+
+    
     @include for-md{
         padding: vw3(100) vw3(30) 0;
     }
     // @include for-tiny-tablet{
     //     padding: 50px 15px 0;
     // }
-
+    &--after{
+        margin-top: vw(95);
+        .food-questions__item--w45{
+            margin-left: 0;
+        }
+       &:after{
+        content: '';
+        position: absolute;
+        right: 0;
+        top: vw(-250);
+        height: vw(795);
+        width: vw(456);
+        background: url(../img/bottom-quest-after.png) no-repeat center right;
+        background-size: contain;
+       }
+    }
     &--food{
         padding-top: vw(40);
         @include for-md{
             padding-top: vw3(40);
         }
+    }
+    &--no-padding{
+        padding-top: 0;
     }
     &__row{
         display: flex;
@@ -3014,8 +3455,7 @@ header{
         padding-top: 140px;
         padding-left: vw(35);
         @include for-md{
-            padding-top: vw3(40);
-            padding-left: vw3(25);
+           display: none;
         }
     }
     &__brand-img-container{
@@ -3036,17 +3476,21 @@ header{
     
 }
 .explanation-text{
-    font-size: vw(12);
-    line-height: vw(16);
+    font-size: vw(14);
+    line-height: vw(17);
     color: $light-purple;
-    @include for-md{
-        font-size: vw3(12);
-        line-height: vw3(16);
+    a{
+        color: $light-purple; 
+        &:hover{
+            text-decoration: underline;
+        }
     }
-    // @include for-tiny-tablet{
-    //     font-size: 8px;
-    //     line-height: 12px;
-    // }
+    @include for-md(){
+        font-size: vw3(20);
+        line-height: vw3(25);
+        
+    }
+    
 }
 .hero-food{
     padding-top: vw(160);
@@ -3081,7 +3525,7 @@ header{
             position: relative;
             left: vw(-16);
             top: vw(-25);
-            font-size: vw(59);
+            font-size: vw(40);
             line-height: 0;
             @include for-md{
                 font-size: vw3(30);
@@ -3176,10 +3620,63 @@ header{
         @include for-md{
            left: 0;
         }
+
+        
+    }
+
+    &--food3{
+        &:before{
+            content: '';
+            position: absolute;
+            left: 0;
+            top: vw(450);
+            width: vw(825);
+            height: vw(687);
+            background: url(../img/food3-before.png) left top no-repeat;
+            background-size: contain;
+        }
+    }
+    &__content{
+        box-sizing: border-box;
+
+        &--pl-left{
+            padding-left: vw(55);
+        }
+
+        p{
+            
+            font-weight: 300;
+        }
+        p+ p{
+            margin-top: vw(40);
+        }
+        ul{
+            padding: 0;
+            margin: vw(40) 0;
+            list-style: none;
+
+            li{
+                font-size: vw(30);
+                line-height: vw(35);
+                font-weight: 500;
+                font-style: italic;
+                font-family: $EB;
+                &:before{
+                    content: '•';
+                    position: relative;
+                    top: vw(4);
+                    margin: 0 vw(5);
+                }
+            }
+        }
     }
     &__item{
         box-sizing: border-box;
         width: 40%;
+        &--w45{
+            width: 45%;
+            margin-left: 5%;
+        }
         &--w60{
             width: 59%;
             padding-right: vw(40);
@@ -3187,6 +3684,9 @@ header{
                 width: 100%;
                 padding-right: 0;
             } 
+        }
+        &--w50{
+            width: 50%;
         }
         @include for-md{
             width: 100%;
@@ -3282,6 +3782,11 @@ header{
         line-height: vw(114);
         color: $purple2;
         font-family: $EB;
+
+        &--lit{
+            font-size: vw(106);
+            line-height: vw(114);
+        }
         &--pink{
             color: $pink;
         }
@@ -3336,7 +3841,7 @@ header{
     z-index: 2;
     overflow: hidden;
     padding: vw(255) 0;
-    background: url(../images/food1-bg.jpg) no-repeat center vw(870);
+    background: url(../images/food1-bg.jpg) no-repeat center vw-con(150);
     background-size: contain;
 
     @include for-md(){
@@ -3485,10 +3990,10 @@ header{
             &::before{
                 content: '';
                 position: absolute;
-                right: vw(-72);
-                top: vw(55);
-                height: vw(689);
-                width: vw(825);
+                right: vw-con(-72);
+                top: vw(-20);
+                height: vw-con(600);
+                width: vw-con(800);
                 background: url(../images/advices-item-before.png) no-repeat top right;
                 background-size: contain;
 
@@ -3548,4 +4053,10 @@ header{
   }
 
 
- 
+ .test__question-test{
+     sup{
+        top: 0;
+        position: relative;
+        line-height: 0;
+     }
+ }
